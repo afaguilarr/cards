@@ -4,8 +4,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"strconv"
 	"strings"
+	"time"
 )
 
 type Deck []string
@@ -25,7 +27,7 @@ func NewDeck() Deck {
 // Prints each of the cards in the deck
 func (d Deck) PrintEach() {
 	for index, card := range d {
-		log.Println("Card", strconv.FormatInt(int64(index), 10) + ": ", card)
+		log.Println("Card", strconv.FormatInt(int64(index), 10)+": ", card)
 	}
 }
 
@@ -82,4 +84,11 @@ func (d Deck) GetHandAndRemainingDeck(handSize int) (Hand, Deck) {
 	log.Println("Hand:", hand)
 	log.Println("Remaining Deck:", deck)
 	return Hand(hand), deck
+}
+
+// Shuffles the received deck
+func (d Deck) Shuffle() {
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(len(d), func(i, j int) { d[i], d[j] = d[j], d[i] })
+	log.Println(d)
 }

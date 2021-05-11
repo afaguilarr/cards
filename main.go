@@ -2,7 +2,6 @@ package main
 
 import (
 	"cards/deck"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -16,7 +15,7 @@ func main() {
 	d.SaveToFile()
 	d = deck.LoadDeckFromFile()
 	hand = deck.LoadHandFromFile()
-	fmt.Println("HOLIIII")
+	d.Shuffle()
 }
 
 func setLogsState(osArgs []string) {
