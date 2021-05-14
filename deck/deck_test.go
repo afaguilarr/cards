@@ -1,1 +1,35 @@
 package deck
+
+import (
+	"reflect"
+	"strings"
+	"testing"
+)
+
+func TestNewDeck(t *testing.T) {
+	d := NewDeck()
+	// sd := NewDeck() Just to test the DeepEqual
+
+	if len(d) != 52 {
+		t.Errorf("Expected deck length of 52, but got %s", string(len(d)))
+	}
+
+	if reflect.TypeOf(d).String() != "deck.Deck" {
+		t.Errorf("Expected deck type to be 'Deck', but got '%s'", reflect.TypeOf(d).String())
+	}
+
+	// if !reflect.DeepEqual(d, sd) {
+	//     t.Errorf("\nActual Deck:\n%s\nIs different than the expected deck:\n%s", d.ToString(), sd.ToString())
+	// }
+
+	for _, card := range d {
+		split_card := strings.Split(string(card), " of ")
+		suit, value := split_card[0], split_card[1]
+		if containsString(getCardSuits(), suit) {
+			t.Errorf("The suit '%s' is not an allowed suit", suit)
+		}
+		if containsString(getCardValues(), value) {
+			t.Errorf("The value '%s' is not an allowed value", value)
+		}
+	}
+}
