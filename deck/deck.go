@@ -5,7 +5,6 @@ import (
 	"io/ioutil"
 	"log"
 	"math/rand"
-	"strconv"
 	"strings"
 	"time"
 )
@@ -22,13 +21,6 @@ func NewDeck() Deck {
 	}
 	log.Println("New Deck:", d)
 	return d
-}
-
-// Prints each of the cards in the deck
-func (d Deck) PrintEach() {
-	for index, card := range d {
-		log.Println("Card", strconv.FormatInt(int64(index), 10)+": ", card)
-	}
 }
 
 // Returns the string representation of the received deck

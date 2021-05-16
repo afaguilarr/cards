@@ -11,3 +11,15 @@ func containsString(slice []string, e string) bool {
 	}
 	return false
 }
+
+func areAllStringsUnique(slice []string) (bool, string) {
+	set := make(map[string]int)
+	for _, e := range slice {
+		if _, ok := set[e]; ok {
+			return false, e
+		} else {
+			set[e] = 0
+		}
+	}
+	return true, ""
+}
