@@ -2,34 +2,32 @@ package main
 
 import (
 	"cards/deck"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 func main() {
 	setLogsState(os.Args)
+	env_map := set_env_map()
 	d := deck.NewDeck()
 	hand, d := d.GetHandAndRemainingDeck(7)
-	hand.SaveToFile()
-	d.SaveToFile()
-	d = deck.LoadDeckFromFile()
-	hand = deck.LoadHandFromFile()
+	hand.SaveToFile(env_map)
+	d.SaveToFile(env_map)
+	d, _ = deck.LoadDeckFromFile(env_map)
+	hand = deck.LoadHandFromFile(env_map)
 	d.Shuffle()
-
-	s := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-
-	for _, num := range s {
-		fmt.Printf("%v is %s\n", num, oddOrEvens(num))
-	}
 }
 
-func oddOrEvens(num int) string {
-	if num%2 != 0 {
-		return "odd"
+func set_env_map() map[string]string {
+	env_map, err := godotenv.Read()
+	if err != nil {
+		log.Fatal("Error loading .env file: ", err)
 	}
-	return "even"
+	log.Println(env_map)
+	return env_map
 }
 
 func setLogsState(osArgs []string) {

@@ -38,12 +38,12 @@ func (d Deck) ToBytes() []byte {
 }
 
 // Saves the received deck in the data/deck file
-func (d Deck) SaveToFile() {
-	SaveToFile(d, "deck")
+func (d Deck) SaveToFile(env_map map[string]string) {
+	SaveToFile(d, env_map["DECK_FILE"])
 }
 
 func SaveToFile(d Deck, fileName string) {
-	err := ioutil.WriteFile(fmt.Sprintf("deck/data/%s.txt", fileName), d.ToBytes(), 0666)
+	err := ioutil.WriteFile(fileName, d.ToBytes(), 0666)
 	if err != nil {
 		log.Fatal("Error while trying to save a deck: ", err)
 	}
@@ -51,21 +51,21 @@ func SaveToFile(d Deck, fileName string) {
 }
 
 // Loads the information in the data/deck file and generates a new deck
-func LoadDeckFromFile() Deck {
-	return LoadFromFile("deck")
+func LoadDeckFromFile(env_map map[string]string) (Deck, error) {
+	return LoadFromFile(env_map["DECK_FILE"])
 }
 
-func LoadFromFile(fileName string) Deck {
-	file, err := ioutil.ReadFile(fmt.Sprintf("deck/data/%s.txt", fileName))
+func LoadFromFile(fileName string) (Deck, error) {
+	file, err := ioutil.ReadFile(fileName)
 	if err != nil {
-		log.Fatal("Error while trying to load a deck: ", err)
+		return nil, err
 	}
 
 	deckString := string(file)
 	deckStringSlice := strings.Split(deckString, "\n")
 
 	log.Println(fmt.Sprintf("%s String Slice:", fileName), deckStringSlice)
-	return deckStringSlice
+	return deckStringSlice, nil
 }
 
 // Gets a hand composed of the defined number of cards and also returns

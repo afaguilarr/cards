@@ -2,6 +2,8 @@ package deck
 
 import (
 	// "reflect"
+
+	"reflect"
 	"strings"
 	"testing"
 )
@@ -43,5 +45,20 @@ func TestNewDeckUniqueElements(t *testing.T) {
 	d := NewDeck()
 	if b, s := areAllStringsUnique(d); !b {
 		t.Errorf("The card '%s' is not unique", s)
+	}
+}
+
+func TestSaveAndLoadDeck(t *testing.T) {
+	d := NewDeck()
+	envMap := set_env_map()
+	d.SaveToFile(envMap)
+	ld, err := LoadDeckFromFile(envMap)
+	if err != nil {
+		removeFile(envMap["DECK_FILE"])
+		t.Error("Error loading deck: ", err)
+	}
+	removeFile(envMap["DECK_FILE"])
+	if !reflect.DeepEqual(d, ld) {
+		t.Errorf("\nActual Deck:\n%s\nIs different than the expected deck:\n%s", d.ToString(), ld.ToString())
 	}
 }
