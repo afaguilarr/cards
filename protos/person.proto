@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package person;
+
+import "protos/date.proto";
+
+message Person {
+    int32 age = 1;
+    string first_name = 2;
+    string last_name = 3;
+    bytes picture = 4;  // Image in .jpeg format
+    bool profile_verified = 5;
+    float height = 6;
+    repeated string phone_numbers = 7;
+
+    enum EyeColor {
+        UNKNOWN = 0;
+        GREEN = 1;
+        BLUE = 2;
+        BROWN = 3;
+    }
+
+    EyeColor eye_color = 8;
+    date.Date birthday_date = 9;
+}
+
+message LatitudeLongitude {
+    float latitude = 1;
+    float longitude = 2;
+}
+
+message Money {
+    string currency_code = 1;
+    int32 integral_amount = 2;
+    int32 decimal_amount = 3;
+}
+
+message DayOfWeek {
+    enum Day {
+        UNDEFINED = 1;
+        MONDAY = 2;
+        TUESDAY = 3;
+        WEDNESDAY = 4;
+        THURSDAY = 5;
+        FRIDAY = 6;
+        SATURDAY = 7;
+        SUNDAY = 8;
+    }
+    Day day = 1;
+}
+
+message PersonExercise {
+    string first_name = 1;
+    repeated string middle_names = 2;
+    string last_name = 3;
+}
