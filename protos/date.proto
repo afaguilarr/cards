@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package date;
 
-option go_package = "./";
+option go_package = "./personpb";
 
 message Date {
     int32 year = 1;

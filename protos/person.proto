@@ -4,7 +4,7 @@ package person;
 
 import "protos/date.proto";
 
-option go_package = "./";
+option go_package = "./personpb";
 
 message Person {
     int32 age = 1;
