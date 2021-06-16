@@ -281,6 +281,7 @@ func writeEmptyBook() *addressbookpb.AddressBook {
 
 func removeAddress(ab *addressbookpb.AddressBook, index int32) *addressbookpb.AddressBook {
 	ab.People = append(ab.People[:index], ab.People[index+1:]...)
+	writeBook(ab)
 	return ab
 }
 

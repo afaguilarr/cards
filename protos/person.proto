@@ -24,6 +24,7 @@ message Person {
 
     EyeColor eye_color = 8;
     date.Date birthday_date = 9;
+    repeated date.Date dates = 10;
 }
 
 message LatitudeLongitude {

@@ -11,16 +11,16 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from protos import date_pb2 as protos_dot_date__pb2
+from python_proto_code.protos import date_pb2 as protos_dot_date__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='protos/person.proto',
   package='person',
   syntax='proto3',
-  serialized_options=b'Z\002./',
+  serialized_options=b'Z\n./personpb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x13protos/person.proto\x12\x06person\x1a\x11protos/date.proto\"\x96\x02\n\x06Person\x12\x0b\n\x03\x61ge\x18\x01 \x01(\x05\x12\x12\n\nfirst_name\x18\x02 \x01(\t\x12\x11\n\tlast_name\x18\x03 \x01(\t\x12\x0f\n\x07picture\x18\x04 \x01(\x0c\x12\x18\n\x10profile_verified\x18\x05 \x01(\x08\x12\x0e\n\x06height\x18\x06 \x01(\x02\x12\x15\n\rphone_numbers\x18\x07 \x03(\t\x12*\n\teye_color\x18\x08 \x01(\x0e\x32\x17.person.Person.EyeColor\x12!\n\rbirthday_date\x18\t \x01(\x0b\x32\n.date.Date\"7\n\x08\x45yeColor\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05GREEN\x10\x01\x12\x08\n\x04\x42LUE\x10\x02\x12\t\n\x05\x42ROWN\x10\x03\"8\n\x11LatitudeLongitude\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\"O\n\x05Money\x12\x15\n\rcurrency_code\x18\x01 \x01(\t\x12\x17\n\x0fintegral_amount\x18\x02 \x01(\x05\x12\x16\n\x0e\x64\x65\x63imal_amount\x18\x03 \x01(\x05\"\xa1\x01\n\tDayOfWeek\x12\"\n\x03\x64\x61y\x18\x01 \x01(\x0e\x32\x15.person.DayOfWeek.Day\"p\n\x03\x44\x61y\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06MONDAY\x10\x01\x12\x0b\n\x07TUESDAY\x10\x02\x12\r\n\tWEDNESDAY\x10\x03\x12\x0c\n\x08THURSDAY\x10\x04\x12\n\n\x06\x46RIDAY\x10\x05\x12\x0c\n\x08SATURDAY\x10\x06\x12\n\n\x06SUNDAY\x10\x07\"M\n\x0ePersonExercise\x12\x12\n\nfirst_name\x18\x01 \x01(\t\x12\x14\n\x0cmiddle_names\x18\x02 \x03(\t\x12\x11\n\tlast_name\x18\x03 \x01(\tB\x04Z\x02./b\x06proto3'
+  serialized_pb=b'\n\x13protos/person.proto\x12\x06person\x1a\x11protos/date.proto\"\xb1\x02\n\x06Person\x12\x0b\n\x03\x61ge\x18\x01 \x01(\x05\x12\x12\n\nfirst_name\x18\x02 \x01(\t\x12\x11\n\tlast_name\x18\x03 \x01(\t\x12\x0f\n\x07picture\x18\x04 \x01(\x0c\x12\x18\n\x10profile_verified\x18\x05 \x01(\x08\x12\x0e\n\x06height\x18\x06 \x01(\x02\x12\x15\n\rphone_numbers\x18\x07 \x03(\t\x12*\n\teye_color\x18\x08 \x01(\x0e\x32\x17.person.Person.EyeColor\x12!\n\rbirthday_date\x18\t \x01(\x0b\x32\n.date.Date\x12\x19\n\x05\x64\x61tes\x18\n \x03(\x0b\x32\n.date.Date\"7\n\x08\x45yeColor\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05GREEN\x10\x01\x12\x08\n\x04\x42LUE\x10\x02\x12\t\n\x05\x42ROWN\x10\x03\"8\n\x11LatitudeLongitude\x12\x10\n\x08latitude\x18\x01 \x01(\x02\x12\x11\n\tlongitude\x18\x02 \x01(\x02\"O\n\x05Money\x12\x15\n\rcurrency_code\x18\x01 \x01(\t\x12\x17\n\x0fintegral_amount\x18\x02 \x01(\x05\x12\x16\n\x0e\x64\x65\x63imal_amount\x18\x03 \x01(\x05\"\xa1\x01\n\tDayOfWeek\x12\"\n\x03\x64\x61y\x18\x01 \x01(\x0e\x32\x15.person.DayOfWeek.Day\"p\n\x03\x44\x61y\x12\r\n\tUNDEFINED\x10\x00\x12\n\n\x06MONDAY\x10\x01\x12\x0b\n\x07TUESDAY\x10\x02\x12\r\n\tWEDNESDAY\x10\x03\x12\x0c\n\x08THURSDAY\x10\x04\x12\n\n\x06\x46RIDAY\x10\x05\x12\x0c\n\x08SATURDAY\x10\x06\x12\n\n\x06SUNDAY\x10\x07\"M\n\x0ePersonExercise\x12\x12\n\nfirst_name\x18\x01 \x01(\t\x12\x14\n\x0cmiddle_names\x18\x02 \x03(\t\x12\x11\n\tlast_name\x18\x03 \x01(\tB\x0cZ\n./personpbb\x06proto3'
   ,
   dependencies=[protos_dot_date__pb2.DESCRIPTOR,])
 
@@ -56,8 +56,8 @@ _PERSON_EYECOLOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=274,
-  serialized_end=329,
+  serialized_start=301,
+  serialized_end=356,
 )
 _sym_db.RegisterEnumDescriptor(_PERSON_EYECOLOR)
 
@@ -111,8 +111,8 @@ _DAYOFWEEK_DAY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=520,
-  serialized_end=632,
+  serialized_start=547,
+  serialized_end=659,
 )
 _sym_db.RegisterEnumDescriptor(_DAYOFWEEK_DAY)
 
@@ -188,6 +188,13 @@ _PERSON = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dates', full_name='person.Person.dates', index=9,
+      number=10, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -202,7 +209,7 @@ _PERSON = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=51,
-  serialized_end=329,
+  serialized_end=356,
 )
 
 
@@ -240,8 +247,8 @@ _LATITUDELONGITUDE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=331,
-  serialized_end=387,
+  serialized_start=358,
+  serialized_end=414,
 )
 
 
@@ -286,8 +293,8 @@ _MONEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=389,
-  serialized_end=468,
+  serialized_start=416,
+  serialized_end=495,
 )
 
 
@@ -319,8 +326,8 @@ _DAYOFWEEK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=632,
+  serialized_start=498,
+  serialized_end=659,
 )
 
 
@@ -365,12 +372,13 @@ _PERSONEXERCISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=634,
-  serialized_end=711,
+  serialized_start=661,
+  serialized_end=738,
 )
 
 _PERSON.fields_by_name['eye_color'].enum_type = _PERSON_EYECOLOR
 _PERSON.fields_by_name['birthday_date'].message_type = protos_dot_date__pb2._DATE
+_PERSON.fields_by_name['dates'].message_type = protos_dot_date__pb2._DATE
 _PERSON_EYECOLOR.containing_type = _PERSON
 _DAYOFWEEK.fields_by_name['day'].enum_type = _DAYOFWEEK_DAY
 _DAYOFWEEK_DAY.containing_type = _DAYOFWEEK

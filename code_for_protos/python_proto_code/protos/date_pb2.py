@@ -17,9 +17,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='protos/date.proto',
   package='date',
   syntax='proto3',
-  serialized_options=b'Z\002./',
+  serialized_options=b'Z\n./personpb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11protos/date.proto\x12\x04\x64\x61te\"0\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x42\x04Z\x02./b\x06proto3'
+  serialized_pb=b'\n\x11protos/date.proto\x12\x04\x64\x61te\"0\n\x04\x44\x61te\x12\x0c\n\x04year\x18\x01 \x01(\x05\x12\r\n\x05month\x18\x02 \x01(\x05\x12\x0b\n\x03\x64\x61y\x18\x03 \x01(\x05\x42\x0cZ\n./personpbb\x06proto3'
 )
 
 
